@@ -4,6 +4,14 @@ CONTAINER_PATH=/var/lib/libvirt/lxc/centos-6-x86_64/rootfs
 
 yum install libvirt python-virtinst libcgroup -y
 
+SERVICES=(cgconfig messagebus libvirtd)
+
+for SERVICE in $SERVICES
+do
+    sudo chkconfig --add $SERVICE
+    sudo service $SERVICE start
+done
+
 # the majority of this script was taken from
 # http://wiki.centos.org/HowTos/LXC-on-CentOS6
 
