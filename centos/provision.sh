@@ -2,7 +2,7 @@
 
 CONTAINER_PATH=/var/lib/libvirt/lxc/centos-6-x86_64/rootfs
 
-yum install libvirt -y
+yum install libvirt python-virtinst libcgroup -y
 
 # the majority of this script was taken from
 # http://wiki.centos.org/HowTos/LXC-on-CentOS6
